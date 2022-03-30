@@ -2,21 +2,29 @@ import React from "react"
 import Nav from "./components/Nav"
 import Hero from "./components/Hero"
 import Card from "./components/Card"
-import swimmer from "./images/swimmer.png"
+import data from "./data"
 
 export default function App() {
+    const cardElements = data.map(item => {
+        return (
+            <Card 
+                key = {item.id}
+                img = {item.coverImg}
+                rating = {item.stats.rating}
+                reviewCount = {item.stats.reviewCount}
+                location = {item.location}
+                title = {item.title}
+                price = {item.price} 
+            />
+        )
+    })
     return (
         <div>
             <Nav />
             <Hero />
-            <Card 
-                img={swimmer}
-                rating="5.0"
-                reviewCount={6}
-                country="USA"
-                title="Life lessons with Katie Zaferes"
-                price={136}
-            />
+            <section className="cards--list">
+                {cardElements}
+            </section>
         </div>
 
     )

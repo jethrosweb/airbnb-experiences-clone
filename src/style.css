@@ -1,5 +1,7 @@
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap");
 
+/* Global variables */
 * {
     box-sizing: border-box;
 }
@@ -9,6 +11,7 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+/* Nav & misc section */
 .nav--container {
     height: 70px;
     display: flex;
@@ -32,6 +35,7 @@ section {
     padding: 20px;
 }
 
+/* Hero section */
 .hero {
     display: flex;
     flex-direction: column;
@@ -51,14 +55,31 @@ section {
     max-width: 330px;
 }
 
+/* Card section */
+.cards--list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+}
+
 .card {
     width: 175px;
     font-size: 12px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .card--image {
     width: 100%;
     border-radius: 9px;
+    margin-bottom: 9px;
+}
+
+.card--title {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card--stats {
@@ -68,4 +89,8 @@ section {
 
 .card--star {
     height: 14px;
+}
+
+.card--price {
+    margin-top: auto;
 }
